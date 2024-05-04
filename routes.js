@@ -45,6 +45,7 @@ module.exports = (app) => {
 
             await sharp(req.session.filename)
                 .greyscale(true)
+                .withMetadata()
                 .toFile(newFilePath);
                 
             res.send(newFilePath);
@@ -67,6 +68,7 @@ module.exports = (app) => {
 
             await sharp(req.session.filename)
                 .blur(10)
+                .withMetadata()
                 .toFile(newFilePath);
 
             res.send(newFilePath);
@@ -89,6 +91,7 @@ module.exports = (app) => {
 
             await sharp(req.session.filename)
                 .negate({ alpha: false })
+                .withMetadata()
                 .toFile(newFilePath);
 
             res.send(newFilePath);
@@ -111,6 +114,7 @@ module.exports = (app) => {
 
             await sharp(req.session.filename)
                 .tint({ r: 255, g: 0, b: 0 })
+                .withMetadata()
                 .toFile(newFilePath);
 
             res.send(newFilePath);
@@ -133,6 +137,7 @@ module.exports = (app) => {
 
             await sharp(req.session.filename)
                 .tint({ r: 0, g: 0, b: 255 })
+                .withMetadata()
                 .toFile(newFilePath);
 
             res.send(newFilePath);
@@ -155,6 +160,7 @@ module.exports = (app) => {
 
             await sharp(req.session.filename)
                 .tint({ r: 0, g: 255, b: 0 })
+                .withMetadata()
                 .toFile(newFilePath);
 
             res.send(newFilePath);
