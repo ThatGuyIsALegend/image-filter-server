@@ -17,6 +17,11 @@ app.use(cors({
     credentials: true
 }));
 
+app.use((req, res, next) => {
+    console.log('Request Origin:', req.get('Origin'));
+    next();
+});
+
 app.use(session({
     secret: 'super-secret',
     resave: false,
