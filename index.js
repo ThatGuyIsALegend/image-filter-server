@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 setInterval(() => {deleteOldFiles('./uploads', 3600*1000)}, 360*1000)
 
 app.use(cors({
-    origin: '*', // React app URL
+    origin: '177.228.71.135', // React app URL
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
     credentials: true
 }));
