@@ -34,6 +34,7 @@ module.exports = (app) => {
     app.get('/greyscale', async (req, res) => {
         try{
             if (!fs.existsSync(req.session.filename)) {
+                console.log(req.session)
                 return res.status(404).send('File not found');
             }
 
