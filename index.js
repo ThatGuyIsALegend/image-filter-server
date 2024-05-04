@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 setInterval(() => {deleteOldFiles('./uploads', 3600*1000)}, 360*1000)
 
 app.use(cors({
-    origin: 'http://localhost:5173', // React app URL
+    origin: '*', // React app URL
     methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
     credentials: true
 }));
@@ -21,7 +21,7 @@ app.use(session({
     secret: 'super-secret',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }
+    cookie: { secure: true }
 }));
 
 require('./routes')(app);
