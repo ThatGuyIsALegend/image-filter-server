@@ -26,7 +26,7 @@ app.use(session({
     secret: 'super-secret',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    cookie: { secure: false }
 }));
 
 require('./routes')(app);
